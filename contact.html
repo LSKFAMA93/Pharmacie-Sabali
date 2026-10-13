@@ -124,8 +124,8 @@
               </div>
               <div>
                 <div class="contact-info-label">Téléphone Fixe / Mobile</div>
-                <div class="contact-info-value"><a href="tel:+22300000000">[NUMERO_TELEPHONE]</a></div>
-                <div class="contact-info-desc">Appels directs pendant les heures d'ouverture</div>
+                <div class="contact-info-value"><a href="tel:+22377255242">+223 77 25 52 42</a></div>
+                <div class="contact-info-desc">Ligne directe & assistance aux patients (77 25 52 42)</div>
               </div>
             </div>
 
@@ -136,8 +136,8 @@
               </div>
               <div>
                 <div class="contact-info-label">WhatsApp Professionnel</div>
-                <div class="contact-info-value">[NUMERO_WHATSAPP]</div>
-                <div class="contact-info-desc">Réponse rapide pour vérification d'ordonnances</div>
+                <div class="contact-info-value"><a href="https://wa.me/22391033837" target="_blank" rel="noopener noreferrer">+223 91 03 38 37</a></div>
+                <div class="contact-info-desc">Réponse rapide au 91 03 38 37</div>
               </div>
             </div>
 
@@ -148,7 +148,7 @@
               </div>
               <div>
                 <div class="contact-info-label">Courrier Électronique</div>
-                <div class="contact-info-value"><a href="mailto:contact@pharmacie-sabali.com">[EMAIL_PHARMACIE]</a></div>
+                <div class="contact-info-value"><a href="mailto:pharmaciesabali223@gmail.com">pharmaciesabali223@gmail.com</a></div>
                 <div class="contact-info-desc">Pour devis, mutuelles et correspondances</div>
               </div>
             </div>
@@ -160,8 +160,8 @@
               </div>
               <div>
                 <div class="contact-info-label">Adresse Géographique</div>
-                <div class="contact-info-value">[ADRESSE_PHARMACIE]</div>
-                <div class="contact-info-desc">Quartier Sabali — Emplacement facilement repérable</div>
+                <div class="contact-info-value">BACO DJICORONI RUE 636, BAMAKO</div>
+                <div class="contact-info-desc">Baco Djicoroni — Emplacement facilement repérable</div>
               </div>
             </div>
 
@@ -172,8 +172,13 @@
               </div>
               <div>
                 <div class="contact-info-label">Horaires de Service</div>
-                <div class="contact-info-value">Lun - Sam : 08h00 – 22h00</div>
-                <div class="contact-info-desc">Dimanche & Fériés : Rotation de garde 24h/24 [HORAIRES]</div>
+                <div class="contact-info-value" style="font-size: 0.95rem; line-height: 1.45;">
+                  <div>• Lun - Jeu : 08h15 à 22h30</div>
+                  <div>• Vendredi : 08h30 à 22h30</div>
+                  <div>• Samedi : 08h15 à 22h30</div>
+                  <div>• Dimanche : 10h00 à 20h00</div>
+                </div>
+                <div class="contact-info-desc" style="margin-top: 0.25rem;">Ouvert 7 jours sur 7 à votre service</div>
               </div>
             </div>
 
@@ -195,17 +200,17 @@
             <form class="contact-form" id="mainContactForm" novalidate>
               <div class="form-group">
                 <label class="form-label" for="contactNom">Nom et prénom <span class="required">*</span></label>
-                <input type="text" id="contactNom" name="nom" class="form-control" placeholder="Ex : Aminata Traoré" required>
+                <input type="text" id="contactNom" name="nom" class="form-control" placeholder="Ex : Fousseyni Traoré" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactTel">Numéro de téléphone <span class="required">*</span></label>
-                <input type="tel" id="contactTel" name="telephone" class="form-control" placeholder="Ex : +223 76 00 00 00" required>
+                <input type="tel" id="contactTel" name="telephone" class="form-control" placeholder="Ex : +223 77 25 52 42" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactEmail">Adresse e-mail <span class="required">*</span></label>
-                <input type="email" id="contactEmail" name="email" class="form-control" placeholder="Ex : aminata@exemple.com" required>
+                <input type="email" id="contactEmail" name="email" class="form-control" placeholder="Ex : fousseyni@exemple.com" required>
               </div>
 
               <div class="form-group">
@@ -240,24 +245,24 @@
           <div class="map-header">
             <div>
               <h3 style="margin-bottom: 0.25rem;">Plan d'accès géographique</h3>
-              <p style="margin: 0; font-size: 0.9rem;">Pharmacie SABALI — Emplacement : [ADRESSE_PHARMACIE]</p>
+              <p style="margin: 0; font-size: 0.9rem;">Pharmacie SABALI — Emplacement : BACO DJICORONI RUE 636, BAMAKO</p>
             </div>
             <div>
-              <!-- Bouton Ouvrir l'itinéraire avec lien configurable -->
-              <a href="https://maps.google.com/?q=Pharmacie+Sabali" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="btnItineraire">
+              <!-- Bouton Ouvrir l'itinéraire avec lien Google Maps exact -->
+              <a href="https://www.google.com/maps/place/Pharmacie+Sabali/@12.5987037,-8.0312152,17z" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="btnItineraire">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
                 <span>Ouvrir l'itinéraire Google Maps</span>
               </a>
             </div>
           </div>
 
-          <!-- Zone de carte intégrée responsive (Placeholder OpenStreetMap / Carte interactive propre) -->
+          <!-- Zone de carte intégrée responsive centrée sur la Pharmacie Sabali -->
           <div class="map-iframe-wrapper">
             <iframe 
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-8.05%2C12.60%2C-7.95%2C12.68&amp;layer=mapnik&amp;marker=12.64%2C-8.00" 
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-8.038%2C12.592%2C-8.024%2C12.605&amp;layer=mapnik&amp;marker=12.5987037%2C-8.0312152" 
               title="Localisation Pharmacie SABALI"
               loading="lazy"
-              aria-label="Carte de localisation de la pharmacie SABALI [ADRESSE]">
+              aria-label="Carte de localisation de la pharmacie SABALI">
             </iframe>
           </div>
         </div>
@@ -285,7 +290,7 @@
             </div>
             <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-lg);">
               <div style="font-weight: 700; color: var(--primary-dark); font-size: 1.25rem;">Pharmacie SABALI</div>
-              <div style="font-size: 0.9rem; color: var(--text-muted);">Ligne directe : [NUMERO_TELEPHONE]</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted);">Ligne directe : +223 77 25 52 42</div>
             </div>
           </div>
         </div>
@@ -339,19 +344,19 @@
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>[ADRESSE_PHARMACIE]</span>
+              <span>BACO DJICORONI RUE 636, BAMAKO</span>
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>[NUMERO_TELEPHONE]</span>
+              <span>+223 77 25 52 42</span>
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>[EMAIL_PHARMACIE]</span>
+              <span>pharmaciesabali223@gmail.com</span>
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Lun - Sam : 08h00 - 22h00</span>
+              <span>Lun–Jeu : 08h15–22h30 · Ven : 08h30–22h30 · Sam : 08h15–22h30 · Dim : 10h00–20h00</span>
             </li>
           </ul>
         </div>

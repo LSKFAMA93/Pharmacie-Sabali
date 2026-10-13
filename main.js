@@ -9,13 +9,15 @@
 // ==========================================================================
 const PHARMACIE_CONFIG = {
   nom: "PHARMACIE SABALI",
-  telephone: "+223 00 00 00 00",              // [NUMERO_TELEPHONE] Remplacer par le numéro réel
-  whatsapp: "22300000000",                    // [NUMERO_WHATSAPP] Remplacer par le numéro WhatsApp au format international
-  email: "contact@pharmacie-sabali.com",       // [EMAIL] Remplacer par l'email réel
-  adresse: "Quartier Sabali, Avenue Principale [ADRESSE]", // [ADRESSE]
-  googleMapsUrl: "https://www.google.com/maps?q=Pharmacie+Sabali",
-  horairesSemaine: "Lundi au Samedi : 08h00 – 22h00",
-  horairesDimanche: "Dimanche & Jours fériés : Garde selon rotation (24h/24)"
+  telephone: "+223 77 25 52 42",
+  telephoneLink: "+22377255242",
+  whatsapp: "22391033837",
+  whatsappDisplay: "+223 91 03 38 37",
+  email: "pharmaciesabali223@gmail.com",
+  adresse: "BACO DJICORONI RUE 636, BAMAKO",
+  googleMapsUrl: "https://www.google.com/maps/place/Pharmacie+Sabali/@12.5987037,-8.0312152,17z",
+  horairesSemaine: "Lundi au Jeudi : 08h15 – 22h30 | Vendredi : 08h30 – 22h30 | Samedi : 08h15 – 22h30",
+  horairesDimanche: "Dimanche : 10h00 – 20h00"
 };
 
 // ==========================================================================
