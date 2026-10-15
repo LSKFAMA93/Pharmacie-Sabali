@@ -33,7 +33,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Antalgique et antipyrétique de référence pour soulager douleurs d'intensité légère à modérée et fièvres.",
     fullDesc: "Formulation comprimés sous blister. Indiqué dans le traitement symptomatique des céphalées, états grippaux, douleurs dentaires et courbatures. Posologie et espacement des prises à respecter rigoureusement.",
     precautions: "Respecter la dose maximale journalière. Ne pas associer à d'autres médicaments contenant du paracétamol.",
-    image: "images/produits/prod-paracetamol.svg",
+    image: "images/produits/prod-paracetamol.JPG",
     badge: "Conseil Officinal"
   },
   {
@@ -44,7 +44,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Sachets de sels de réhydratation indispensables pour compenser les pertes électrolytiques.",
     fullDesc: "Préparation hydro-électrolytique recommandée par l'OMS pour la prévention et la prise en charge précoce des déshydratations aiguës consécutives aux diarrhées et vomissements.",
     precautions: "À dissoudre dans exactement 1 litre d'eau potable. Conserver la solution préparée 24h maximum.",
-    image: "images/produits/prod-sro.svg",
+    image: "images/produits/prod-sro.jpg",
     badge: "Essentiel Santé"
   },
   {
@@ -55,7 +55,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Sirop adoucissant pour apaiser les irritations de la gorge et favoriser le confort respiratoire.",
     fullDesc: "Formule apaisante adaptée aux affections bronchiques courantes et toux d'irritation. Aide à fluidifier les sécrétions et procure un soulagement immédiat des muqueuses.",
     precautions: "Demandez conseil pour adapter le traitement selon le type de toux (sèche ou productive).",
-    image: "images/produits/prod-sirop.svg",
+    image: "images/produits/prod-sirop.jpg",
     badge: "Conseil Officinal"
   },
 
@@ -68,7 +68,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Brume d'eau thermale pure riche en oligo-éléments pour calmer les rougeurs et peaux sensibles.",
     fullDesc: "Soin quotidien naturel, apaisant, anti-irritant et adoucissant. Idéal après une exposition solaire, un acte dermatologique ou pour rafraîchir le teint en cours de journée.",
     precautions: "Pulvériser en fine brume, laisser agir 2 à 3 minutes puis sécher délicatement sans frotter.",
-    image: "images/produits/prod-eau-thermale.svg",
+    image: "images/produits/prod-eau-thermale.jpg",
     badge: "Dermo-soin"
   },
   {
@@ -79,7 +79,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Protection solaire dermatologique très haute protection à large spectre UVA/UVB.",
     fullDesc: "Texture fluide invisible, résistante à l'eau et formulée pour les peaux sensibles et intolérantes au soleil. Prévient les taches pigmentaires et le vieillissement cutané prématuré.",
     precautions: "Appliquer généreusement avant toute exposition et renouveler toutes les deux heures.",
-    image: "images/produits/prod-creme-solaire.svg",
+    image: "images/produits/prod-creme-solaire.jpg",
     badge: "Protection Solaire"
   },
   {
@@ -90,7 +90,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Concentré hydratant et repulpant intensif pour tous types de peaux, même déshydratées.",
     fullDesc: "Formule hautement concentrée en acide hyaluronique pur de différents poids moléculaires pour agir en surface et en profondeur. Restaure l'élasticité cutanée et l'éclat.",
     precautions: "Appliquer matin et soir quelques gouttes sur visage propre avant votre crème de jour.",
-    image: "images/produits/prod-serum.svg",
+    image: "images/produits/prod-serum.jpg",
     badge: "Éclat & Hydratation"
   },
 
@@ -103,7 +103,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Nettoyant sans savon au pH physiologique formulé pour préserver le film hydrolipidique.",
     fullDesc: "Hygiène quotidienne du visage et du corps pour toute la famille. Nettoie en douceur sans dessécher et prévient les sensations de tiraillement et d'inconfort cutané.",
     precautions: "Faire mousser sur peau humide, rincer abondamment à l'eau claire.",
-    image: "images/produits/prod-gel-lavant.svg",
+    image: "images/produits/prod-gel-lavant.jpg",
     badge: "Tolérance Haute"
   },
   {
@@ -114,7 +114,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Solution désinfectante pour l'hygiène et l'antisepsie rapide des mains par friction.",
     fullDesc: "Activité bactéricide, fongicide et virucide conforme aux normes hospitalières. Enrichie en agents glycérinés hydratants pour respecter les épidermes sensibles.",
     precautions: "Frotter les mains jusqu'à séchage complet. Ne pas appliquer sur peau lésée.",
-    image: "images/produits/prod-antiseptique.svg",
+    image: "images/produits/prod-solution-hydroalcoolique.jpg",
     badge: "Hygiène & Sécurité"
   },
   {
@@ -125,7 +125,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Pâte dentifrice fluorée renforçant l'émail et protégeant contre la sensibilité dentaire.",
     fullDesc: "Formule cliniquement testée qui reminéralise l'émail dentaire et prévient la formation de la plaque bactérienne tout en apaisant les gencives sensibles.",
     precautions: "Brossage régulier après chaque repas pendant deux minutes. Utiliser une brosse souple.",
-    image: "images/produits/prod-dentifrice.svg",
+    image: "images/produits/prod-dentifrice.jpg",
     badge: "Santé Bucco-dentaire"
   },
 
@@ -138,7 +138,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Formule infantile de relais et de croissance complète adaptée aux besoins nutritionnels dès la naissance.",
     fullDesc: "Apport équilibré en protéines, acides gras essentiels (DHA), vitamines et oligo-éléments essentiels au bon développement psychomoteur et immunitaire du nourrisson.",
     precautions: "Le lait maternel est l'aliment idéal du nourrisson. Préparation rigoureuse du biberon requise.",
-    image: "images/produits/prod-lait-infantile.svg",
+    image: "images/produits/prod-lait-infantile.jpg",
     badge: "Nutrition Bébé"
   },
   {
@@ -149,7 +149,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Soin nettoyant et protecteur traditionnel à base d'huile d'olive pour le change de bébé.",
     fullDesc: "Formule hypoallergénique sans parfum ni conservateur. Laisse un film lipidique protecteur qui isole l'épiderme fessier de l'humidité et de l'acidité des selles et urines.",
     precautions: "Agiter avant emploi. Appliquer à l'aide d'un coton doux. Ne nécessite aucun rinçage.",
-    image: "images/produits/prod-liniment.svg",
+    image: "images/produits/prod-liniment.jpg",
     badge: "Bio & Naturel"
   },
   {
@@ -160,7 +160,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Eau micellaire pure formulée spécialement pour la toilette délicate du nourrisson.",
     fullDesc: "Élimine efficacement et en toute douceur les impuretés du visage et du corps de bébé. Respecte la barrière cutanée encore immature grâce à ses extraits apaisants.",
     precautions: "Appliquer délicatement avec un coton propre jusqu'à propreté parfaite de la peau.",
-    image: "images/produits/prod-eau-bebe.svg",
+    image: "images/produits/prod-eau-bebe.jpg",
     badge: "Toilette Douceur"
   },
 
@@ -173,7 +173,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Dispositif médical certifié pour l'automesure précise de la pression artérielle et du pouls.",
     fullDesc: "Grand écran rétroéclairé, indicateur visuel selon les seuils OMS, détection d'arythmie cardiaque et mémoire multipatient pour un suivi fiable à domicile.",
     precautions: "Prendre les mesures au repos complet, en position assise, sans parler.",
-    image: "images/produits/prod-tensiometre.svg",
+    image: "images/produits/prod-tensiometre.jpg",
     badge: "Automesure Médicale"
   },
   {
@@ -184,7 +184,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Prise de température instantanée et précise sans contact cutané, idéal enfants et adultes.",
     fullDesc: "Technologie infrarouge médicale haute sensibilité. Alarme sonore et chromatique en cas de fièvre. Permet également la mesure de température de biberon ou d'ambiance.",
     precautions: "Positionner le capteur à 3-5 cm du front propre et sec pour une fiabilité maximale.",
-    image: "images/produits/prod-thermometre.svg",
+    image: "images/produits/prod-thermometre.jpg",
     badge: "Diagnostic Rapide"
   },
   {
@@ -195,7 +195,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Appareil compact de mesure de la saturation sanguine en oxygène (SpO2) et fréquence cardiaque.",
     fullDesc: "Mesure non invasive par pince de doigt. Écran OLED multidirectionnel avec affichage de la courbe pléthysmographique. Arrêt automatique après retrait du doigt.",
     precautions: "Mesurer sur un doigt tiède sans vernis ni ongle artificiel.",
-    image: "images/produits/prod-oxymetre.svg",
+    image: "images/produits/prod-oxymetre.jpg",
     badge: "Surveillance Vitale"
   },
 
@@ -208,7 +208,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Association complète de 12 vitamines et 8 minéraux pour soutenir la vitalité et l'immunité.",
     fullDesc: "Complément nutritionnel recommandé lors des changements de saison, périodes de fatigue passagère, surmenage professionnel ou convalescence.",
     precautions: "Ne dispense pas d'une alimentation variée et équilibrée. Ne pas dépasser la dose conseillée.",
-    image: "images/produits/prod-multivitamines.svg",
+    image: "images/produits/prod-multivitamines.jpg",
     badge: "Énergie & Vitalité"
   },
   {
@@ -219,7 +219,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Soutien du système nerveux, réduction de la fatigue musculaire et meilleure gestion du stress.",
     fullDesc: "Formule d'origine marine hautement biodisponible associée à la vitamine B6 pour faciliter l'assimilation cellulaire et procurer une détente neuromusculaire durable.",
     precautions: "Cure recommandée de 30 à 60 jours. Consulter en cas d'insuffisance rénale.",
-    image: "images/produits/prod-magnesium.svg",
+    image: "images/produits/prod-magnesium.jpg",
     badge: "Anti-fatigue & Zen"
   },
   {
@@ -230,7 +230,7 @@ const PRODUCTS_DATA = [
     shortDesc: "Mélange de plantes traditionnelles sélectionnées pour favoriser l'endormissement naturel.",
     fullDesc: "Tisane biologique formulée à base de camomille, mélisse, tilleul et passiflore. Favorise un repos réparateur sans risque d'accoutumance ni somnolence au réveil.",
     precautions: "Laisser infuser 5 à 10 minutes dans une eau frémissante avant le coucher.",
-    image: "images/produits/prod-infusion.svg",
+    image: "images/produits/prod-infusion.jpg",
     badge: "Plantes & Sérénité"
   }
 ];
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initActiveNavigation();
   initScrollAnimations();
-  
+
   // Modules spécifiques selon la page
   initProductsPage();
   initGalleryLightbox();
@@ -266,7 +266,7 @@ function initWhatsAppLinks() {
       e.preventDefault();
       const action = btn.getAttribute("data-wa-action") || "contact";
       let message = "Bonjour Pharmacie SABALI, je vous contacte depuis votre site internet.";
-      
+
       if (action === "ask-info") {
         message = "Bonjour Pharmacie SABALI, je souhaiterais obtenir des informations sur vos services et disponibilités.";
       } else if (action === "product") {
@@ -507,7 +507,7 @@ function initProductsPage() {
   }
 
   // Fonction globale pour réinitialiser
-  window.resetProductFilters = function() {
+  window.resetProductFilters = function () {
     currentCategory = "all";
     currentSearchQuery = "";
     if (searchInput) searchInput.value = "";
@@ -837,7 +837,7 @@ function showSuccessModal() {
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
 
-  window.closeSuccessModal = function() {
+  window.closeSuccessModal = function () {
     modal.classList.remove("active");
     document.body.style.overflow = "";
   };

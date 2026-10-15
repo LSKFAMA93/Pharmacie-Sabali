@@ -104,6 +104,7 @@ Pour modifier un produit existant ou en ajouter un nouveau :
   badge: "Conseil Officinal"
 }
 ```
+Les chemins et extensions doivent respecter exactement la casse des noms de fichiers, notamment sur GitHub Pages (Linux). Après l’ajout ou le remplacement d’une image, publiez le fichier image et la modification de `js/main.js` dans le même commit.
 
 ### 4.3. Remplacer les photos et le logo
 - **Logo** : Remplacez `images/logo/logo.svg` par votre fichier de logo officiel (format SVG ou PNG haute définition).
