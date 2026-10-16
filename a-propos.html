@@ -3,489 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À Propos — PHARMACIE SABALI | Histoire, Équipe & Valeurs</title>
-  <meta name="description" content="Découvrez l'histoire, les valeurs fondamentales et l'équipe de professionnels de la Pharmacie SABALI. Une officine engagée pour la santé et le bien-être de tous.">
-  
-  <!-- Favicon -->
+  <title>À propos — Pharmacie Sabali</title>
+  <meta name="description" content="Découvrez la vision, l'histoire et l'équipe de la Pharmacie Sabali, une officine de proximité engagée pour la santé des familles à Bamako.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="À Propos — PHARMACIE SABALI">
-  <meta property="og:description" content="Découvrez l'équipe et les valeurs de la Pharmacie SABALI, votre partenaire de santé de confiance.">
+  <meta property="og:title" content="À propos — Pharmacie Sabali">
+  <meta property="og:description" content="Une pharmacie de proximité, humaine et engagée au service des familles.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/equipe/pharmacien-titulaire.jpg">
-
-  <!-- Feuilles de style -->
+  <meta property="og:image" content="images/a-propos/officine-accueil.jpg">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root{--ai:#102a23;--ag:#0c684d;--ad:#074534;--am:#dff4eb;--ac:#f7f3eb;--ao:#d6a95f}
+    body{background:#fbfaf7;color:var(--ai)}
+    .about-hero{position:relative;min-height:700px;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--ad)}
+    .about-hero:before{content:"";position:absolute;inset:0;z-index:-3;background:url("images/a-propos/officine-accueil.jpg") center 48%/cover no-repeat;transform:scale(1.02)}
+    .about-hero:after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,35,27,.94),rgba(4,35,27,.74) 46%,rgba(4,35,27,.16)),linear-gradient(0deg,rgba(4,35,27,.82),transparent 55%)}
+    .about-hero .container{width:100%;padding-top:150px;padding-bottom:72px}
+    .eyebrow,.kicker{display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1.25rem;font-size:.76rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+    .eyebrow{color:#d6f7ea}.eyebrow:before{content:"";width:34px;height:2px;background:var(--ao)}
+    .about-hero h1{max-width:900px;margin:0;color:#fff;font-size:clamp(3rem,7vw,6.6rem);line-height:.96;letter-spacing:-.055em}
+    .about-hero h1 em{display:block;color:#8ee0bf;font-family:Georgia,serif;font-weight:400}
+    .hero-copy{max-width:660px;margin:1.8rem 0 0;color:rgba(255,255,255,.84);font-size:clamp(1.05rem,2vw,1.24rem);line-height:1.75}
+    .hero-proof{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}.hero-proof span{display:inline-flex;align-items:center;gap:.55rem;padding:.72rem 1rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(9px);font-size:.86rem;font-weight:700}.hero-proof span:before{content:"✓";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;color:var(--ad);background:#8ee0bf;font-size:.72rem}
+    .about-section{padding:110px 0}.kicker{color:var(--ag)}.kicker:before{content:"+";display:grid;place-items:center;width:24px;height:24px;border-radius:7px;color:#fff;background:var(--ag)}
+    .heading{margin:0;color:var(--ai);font-size:clamp(2.25rem,4vw,4.2rem);line-height:1.05;letter-spacing:-.045em}
+    .story-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,1fr);gap:5rem;align-items:stretch}.story-copy{display:flex;flex-direction:column;justify-content:center}.story-copy .lead{margin:1.7rem 0 1.2rem;color:#245047;font-size:1.25rem;line-height:1.65}.story-copy p:not(.lead){color:#557069;line-height:1.85}
+    .story-visual{position:relative;min-height:700px;padding:0 0 42px 42px}.story-visual:before{content:"";position:absolute;inset:42px 42px 0 0;border-radius:36px;background:var(--am)}.story-visual img{position:relative;width:100%;height:100%;min-height:700px;object-fit:cover;border-radius:36px;box-shadow:0 28px 70px rgba(13,70,53,.2)}.story-note{position:absolute;left:0;bottom:0;max-width:265px;padding:1.35rem 1.5rem;border-radius:22px;color:#fff;background:var(--ad);box-shadow:0 16px 35px rgba(4,45,33,.24)}.story-note strong{display:block;margin-bottom:.35rem;font-size:1.15rem}.story-note span{color:rgba(255,255,255,.72);font-size:.87rem;line-height:1.55}
+    .story-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.8rem}.story-stat{padding:1.15rem 1.2rem;border:1px solid #d9e7e1;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(12,55,43,.06)}.story-stat strong{display:block;color:var(--ag);font-size:1.5rem;line-height:1.1}.story-stat span{display:block;margin-top:.35rem;color:#60766f;font-size:.82rem;line-height:1.45}.story-button{text-align:center;margin-top:1.35rem}
+    .principles{background:var(--ad);color:#fff}.principles .kicker{color:#9ee8cb}.principles .kicker:before{color:var(--ad);background:#9ee8cb}.principles .heading{max-width:760px;color:#fff}.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:4rem;border:1px solid rgba(255,255,255,.12);border-radius:28px;overflow:hidden;background:rgba(255,255,255,.12)}.principle-card{min-height:315px;padding:2.2rem 1.8rem;background:#0a503d;transition:.3s}.principle-card:hover{background:#0d5d47}.principle-number{color:#7bd4b3;font-family:Georgia,serif;font-size:2.6rem}.principle-card h3{margin:4.5rem 0 .8rem;color:#fff;font-size:1.35rem}.principle-card p{margin:0;color:rgba(255,255,255,.7);line-height:1.7;font-size:.94rem}
+    .journey-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}.journey-intro{color:#58736b;line-height:1.8}.journey-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.journey-card{position:relative;min-height:330px;padding:2.2rem;border:1px solid #dfe8e3;border-radius:28px;background:#fff;box-shadow:0 18px 55px rgba(12,55,43,.07)}.journey-card:before{content:"";position:absolute;top:0;left:2.2rem;width:64px;height:4px;border-radius:0 0 8px 8px;background:var(--ao)}.journey-step{color:var(--ag);font-size:.75rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.journey-card h3{margin:2.8rem 0 1rem;color:var(--ai);font-size:1.55rem}.journey-card p{margin:0;color:#5c746d;line-height:1.8}
+    .team-section{background:var(--ac)}.team-heading{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:3.5rem}.team-heading p{max-width:520px;margin:0;color:#5c746d;line-height:1.75}.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}.team-card-new{overflow:hidden;border-radius:26px;background:#fff;box-shadow:0 18px 50px rgba(30,50,44,.08)}.team-photo{position:relative;height:330px;overflow:hidden;background:#dbe9e4}.team-photo:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(3,34,25,.38))}.team-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.team-card-new:hover img{transform:scale(1.045)}.team-info-new{padding:1.45rem}.team-info-new h3{margin:0 0 .4rem;color:var(--ai);font-size:1.15rem}.team-role-new{color:var(--ag);font-size:.82rem;font-weight:800}.team-info-new p{margin:.9rem 0 0;color:#657b74;font-size:.88rem;line-height:1.65}
+    .promise-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:5rem}.promise-image{min-height:560px;overflow:hidden;border-radius:34px}.promise-image img{width:100%;height:100%;object-fit:cover}.promise-panel{display:flex;flex-direction:column;justify-content:center;padding:clamp(2.2rem,5vw,5rem);border-radius:34px;color:#fff;background:linear-gradient(145deg,#0c694e,#073e30)}.promise-panel .kicker{color:#baf1dc}.promise-panel .kicker:before{color:var(--ad);background:#baf1dc}.promise-panel .heading{color:#fff}.promise-panel>p{margin:1.4rem 0 2rem;color:rgba(255,255,255,.73);line-height:1.8}.promise-list{display:grid;gap:1rem}.promise-item{display:flex;gap:1rem;align-items:flex-start;padding-top:1rem;border-top:1px solid rgba(255,255,255,.14)}.promise-icon{flex:0 0 34px;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;color:var(--ad);background:#9ce3c7;font-weight:900}.promise-item strong{display:block;margin-bottom:.25rem}.promise-item span{color:rgba(255,255,255,.67);font-size:.88rem;line-height:1.55}
+    .about-cta{padding:0 0 42px}.cta-inner{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.6rem;padding:3.2rem 3.5rem;border-radius:30px;background:var(--am);text-align:center}.cta-inner h2{max-width:760px;margin:0;color:var(--ai);font-size:clamp(2rem,3vw,3.2rem);line-height:1.08;letter-spacing:-.04em}.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem}.footer-buffer{height:64px;background:#fbfaf7}
+    .site-footer{background:var(--ag);color:rgba(255,255,255,.78);padding:2.4rem 0 1rem;border-top:0}.site-footer .footer-grid{grid-template-columns:1.35fr .75fr 1fr;gap:2.25rem;margin-bottom:1.5rem;align-items:start}.footer-logo-shell{display:inline-flex;align-items:center;padding:.45rem .7rem;border-radius:14px;background:#fff}.footer-logo-shell img{display:block;width:230px;height:auto}.site-footer .footer-brand p{max-width:430px;margin-top:.8rem;color:rgba(255,255,255,.78);font-size:.86rem;line-height:1.55}.site-footer .footer-title{margin-bottom:.85rem;color:#fff;font-size:.95rem}.site-footer .footer-title:after{bottom:-4px;background:#8ee0bf}.site-footer .footer-links{gap:.45rem}.site-footer .footer-links a,.site-footer .footer-contact-item{color:rgba(255,255,255,.78);font-size:.84rem}.site-footer .footer-links a:hover{color:#fff}.site-footer .footer-bottom{padding-top:.9rem;border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65);font-size:.78rem}
+    @media(max-width:1024px){.story-grid,.promise-wrap{grid-template-columns:1fr;gap:3.5rem}.story-visual,.story-visual img{min-height:580px}.principle-grid,.team-grid{grid-template-columns:repeat(2,1fr)}.journey-list{grid-template-columns:1fr}.journey-card{min-height:auto}.team-heading,.journey-head{display:block}.team-heading p,.journey-intro{margin-top:1.4rem}.site-footer .footer-grid{grid-template-columns:1.2fr .8fr 1fr;gap:1.5rem}}
+    @media(max-width:700px){.about-hero{min-height:650px}.about-hero .container{padding-top:120px;padding-bottom:52px}.about-section{padding:76px 0}.story-grid{grid-template-columns:1fr}.story-visual{min-height:460px;padding:0 0 28px 18px}.story-visual img{height:460px;min-height:460px;border-radius:24px}.story-visual:before{inset:24px 24px 0 0;border-radius:24px}.story-note{max-width:235px;padding:1rem 1.1rem}.story-stats{grid-template-columns:1fr 1fr}.principle-grid,.team-grid{grid-template-columns:1fr}.principle-card{min-height:250px}.principle-card h3{margin-top:2.8rem}.team-photo{height:390px}.promise-image{min-height:420px}.cta-inner{padding:2.2rem}.footer-buffer{height:42px}.site-footer{padding:1.6rem 0 .8rem}.site-footer .footer-grid{grid-template-columns:1fr;gap:.85rem;margin-bottom:.85rem}.footer-logo-shell img{width:185px}.site-footer .footer-brand p{display:none}.site-footer .footer-title{margin-bottom:.55rem}.site-footer .footer-links{flex-direction:row;flex-wrap:wrap;gap:.35rem 1rem}.site-footer .footer-contact-list{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .8rem}.site-footer .footer-bottom{padding-top:.7rem}}
+  </style>
 </head>
 <body>
-
-  <!-- ==================== HEADER & NAVIGATION ==================== -->
   <header class="site-header" id="header">
     <div class="container header-container">
-      <a href="index.html" class="logo-link" aria-label="Retour à l'accueil Pharmacie SABALI">
-        <div class="logo-badge">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12h14"/>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <div class="logo-title">PHARMACIE <span>SABALI</span></div>
-          <div class="logo-tagline">Santé • Écoute • Conseil</div>
-        </div>
-      </a>
-
-      <!-- Navigation Desktop -->
-      <nav class="main-nav" aria-label="Navigation principale">
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Accueil</a></li>
-          <li><a href="a-propos.html" class="nav-link active">À propos</a></li>
-          <li><a href="expertise.html" class="nav-link">Notre expertise</a></li>
-          <li><a href="produits.html" class="nav-link">Nos produits</a></li>
-          <li><a href="contact.html" class="nav-link">Nos contacts</a></li>
-        </ul>
-      </nav>
-
-      <!-- CTA Header -->
-      <div class="header-cta-group">
-        <button class="btn btn-whatsapp btn-sm" data-wa-action="ask-info" title="Écrire sur WhatsApp">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.179.182-.077.357.101.174.449.741.963 1.2 0.662.59 1.22.772 1.393.859.173.087.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
-          </svg>
-          <span>WhatsApp</span>
-        </button>
-        <button class="mobile-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
+      <a href="index.html" class="logo-link" aria-label="Retour à l'accueil Pharmacie Sabali"><div class="logo-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div><div class="logo-text"><div class="logo-title">PHARMACIE <span>SABALI</span></div><div class="logo-tagline">Santé • Écoute • Conseil</div></div></a>
+      <nav class="main-nav" aria-label="Navigation principale"><ul class="nav-links"><li><a href="index.html" class="nav-link">Accueil</a></li><li><a href="a-propos.html" class="nav-link active">À propos</a></li><li><a href="expertise.html" class="nav-link">Notre expertise</a></li><li><a href="produits.html" class="nav-link">Nos produits</a></li><li><a href="contact.html" class="nav-link">Nos contacts</a></li></ul></nav>
+      <div class="header-cta-group"><button class="btn btn-whatsapp btn-sm" data-wa-action="ask-info"><span>WhatsApp</span></button><button class="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span class="hamburger-line"></span></button></div>
     </div>
   </header>
-
-  <!-- Tiroir Mobile -->
-  <div class="mobile-menu-drawer" id="mobileDrawer">
-    <ul class="mobile-nav-links">
-      <li><a href="index.html" class="nav-link">Accueil</a></li>
-      <li><a href="a-propos.html" class="nav-link active">À propos</a></li>
-      <li><a href="expertise.html" class="nav-link">Notre expertise</a></li>
-      <li><a href="produits.html" class="nav-link">Nos produits</a></li>
-      <li><a href="contact.html" class="nav-link">Nos contacts</a></li>
-    </ul>
-    <button class="btn btn-whatsapp" style="width: 100%;" data-wa-action="ask-info">
-      Contact direct sur WhatsApp
-    </button>
-  </div>
+  <div class="mobile-menu-drawer" id="mobileDrawer"><ul class="mobile-nav-links"><li><a href="index.html" class="nav-link">Accueil</a></li><li><a href="a-propos.html" class="nav-link active">À propos</a></li><li><a href="expertise.html" class="nav-link">Notre expertise</a></li><li><a href="produits.html" class="nav-link">Nos produits</a></li><li><a href="contact.html" class="nav-link">Nos contacts</a></li></ul><button class="btn btn-whatsapp" style="width:100%" data-wa-action="ask-info">Contact direct sur WhatsApp</button></div>
 
   <main>
-    <!-- ==================== PAGE HERO ==================== -->
-    <section class="page-hero">
-      <div class="hero-pattern"></div>
-      <div class="container" style="position: relative; z-index: 2;">
-        <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span>/</span>
-          <span>À propos</span>
-        </nav>
-        <h1>À propos de la Pharmacie SABALI</h1>
-        <p>
-          Découvrez notre histoire, les valeurs déontologiques qui guident chacune de nos actions et les professionnels dévoués à votre santé.
-        </p>
-      </div>
-    </section>
+    <section class="about-hero"><div class="container"><div class="eyebrow">Notre identité</div><h1>Prendre soin,<em>avec humanité.</em></h1><p class="hero-copy">À la Pharmacie Sabali, chaque conseil commence par l'écoute. Nous mettons notre expertise, notre disponibilité et notre sens du service au cœur de la santé quotidienne des familles.</p><div class="hero-proof"><span>Conseil responsable</span><span>Accueil bienveillant</span><span>Service de proximité</span></div></div></section>
 
-    <!-- ==================== PRÉSENTATION DÉTAILLÉE ==================== -->
-    <section class="section">
-      <div class="container">
-        <div class="presentation-grid">
-          <div class="presentation-text fade-in-element">
-            <span class="section-badge">Notre Vocation</span>
-            <h2>Une officine attentive, moderne et accessible à tous</h2>
-            <p class="lead">
-              Fondée avec la volonté d'offrir une prise en charge pharmaceutique d'excellence, la <strong>PHARMACIE SABALI</strong> s'est imposée comme un repère de confiance pour les patients et leurs familles.
-            </p>
-            <p>
-              Nous croyons fermement qu'une pharmacie est bien plus qu'un simple point de délivrance de médicaments : c'est un espace d'accueil bienveillant, d'écoute active et de conseil préventif. Chaque personne franchissant nos portes bénéficie d'une attention rigoureuse et personnalisée.
-            </p>
-            <p>
-              Notre engagement s'articule autour de la disponibilité des produits essentiels, de la transparence des prix et du respect scrupuleux des normes de stockage et de sécurité sanitaire.
-            </p>
-            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="expertise.html" class="btn btn-primary">Explorer notre expertise</a>
-              <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
-            </div>
-          </div>
+    <section class="about-section"><div class="container story-grid"><div class="story-copy fade-in-element"><div class="kicker">Qui sommes-nous ?</div><h2 class="heading">Une pharmacie pensée comme un repère de confiance.</h2><p class="lead">Sabali signifie la patience, une valeur qui résume notre manière d'accueillir, d'écouter et d'accompagner chaque personne.</p><p>Notre officine est née d'une conviction simple : la santé mérite de la clarté, de l'attention et du temps. Au comptoir comme dans notre espace de conseil, nous cherchons à rendre chaque échange utile et rassurant.</p><p>Nous accompagnons les familles au quotidien, de la bonne compréhension d'un traitement au choix d'un produit de prévention, d'hygiène ou de bien-être. Notre ambition reste la même : être proches, fiables et pleinement engagés.</p><div class="story-stats"><div class="story-stat"><strong>+1 000</strong><span>références disponibles en stock</span></div><div class="story-stat"><strong>6 jours / 7</strong><span>une équipe disponible à votre écoute</span></div></div><div class="story-button"><a href="produits.html" class="btn btn-primary">Découvrir nos produits</a></div></div><div class="story-visual fade-in-element"><img src="images/a-propos/officine-rayons.jpg" alt="Comptoir et rayons de la Pharmacie Sabali"><div class="story-note"><strong>Votre santé, notre attention.</strong><span>Un espace professionnel où chacun peut être écouté avec respect et discrétion.</span></div></div></div></section>
 
-          <div class="presentation-image-wrapper fade-in-element">
-            <img src="images/services/consultation.jpg" alt="Conseil pharmaceutique et écoute patient à la Pharmacie SABALI" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="about-section principles"><div class="container"><div class="kicker">Ce qui nous guide</div><h2 class="heading">Des valeurs visibles dans chaque geste.</h2><div class="principle-grid"><article class="principle-card fade-in-element"><div class="principle-number">01</div><h3>Écouter vraiment</h3><p>Comprendre la situation avant de conseiller, dans le respect de la personne et de sa confidentialité.</p></article><article class="principle-card fade-in-element"><div class="principle-number">02</div><h3>Conseiller clairement</h3><p>Expliquer avec des mots simples pour favoriser une utilisation sûre et responsable des produits de santé.</p></article><article class="principle-card fade-in-element"><div class="principle-number">03</div><h3>Servir avec rigueur</h3><p>Veiller à la qualité, à la traçabilité et aux bonnes pratiques dans chaque étape de notre travail.</p></article><article class="principle-card fade-in-element"><div class="principle-number">04</div><h3>Rester proches</h3><p>Être disponibles pour les besoins du quotidien et bâtir une relation durable avec les familles.</p></article></div></div></section>
 
-    <!-- ==================== HISTOIRE DE LA PHARMACIE ==================== -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-badge">Parcours & Évolution</span>
-          <h2 class="section-title">L'histoire de notre officine</h2>
-          <p class="section-subtitle">
-            Un développement continu au service de la santé publique et des habitants du quartier.
-          </p>
-        </div>
+    <section class="about-section"><div class="container"><div class="journey-head"><div><div class="kicker">Notre histoire</div><h2 class="heading">Un projet devenu une mission quotidienne.</h2></div><p class="journey-intro">Notre histoire ne se résume pas à une succession de dates. Elle se construit chaque jour, dans la confiance accordée par nos patients et dans notre volonté constante de mieux les servir.</p></div><div class="journey-list"><article class="journey-card fade-in-element"><div class="journey-step">Le point de départ</div><h3>Une idée de proximité</h3><p>Créer une officine accessible, professionnelle et accueillante, où chaque patient trouve une écoute attentive et un conseil adapté à son besoin.</p></article><article class="journey-card fade-in-element"><div class="journey-step">La construction</div><h3>Grandir avec les familles</h3><p>Élargir progressivement nos services, renforcer nos pratiques et mieux répondre aux attentes de la communauté sans perdre notre dimension humaine.</p></article><article class="journey-card fade-in-element"><div class="journey-step">Aujourd'hui & demain</div><h3>Faire vivre la confiance</h3><p>Continuer à associer expertise pharmaceutique, disponibilité et innovation utile pour devenir un partenaire de santé toujours plus proche.</p></article></div></div></section>
 
-        <div class="timeline">
-          <!-- Jalon 1 -->
-          <div class="timeline-item fade-in-element">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[ANNEE_CREATION] — Ouverture de l'officine</div>
-              <p>
-                Création de la Pharmacie SABALI avec pour vocation d'apporter un service pharmaceutique de proximité fiable, chaleureux et répondant aux besoins essentiels du quartier.
-              </p>
-              <span class="tag-demo">Historique modulable selon informations officielles</span>
-            </div>
-          </div>
+    <section class="about-section team-section"><div class="container"><div class="team-heading"><div><div class="kicker">L'équipe Sabali</div><h2 class="heading">Des compétences complémentaires, un même engagement.</h2></div><p>Pharmaciens, préparateurs et conseillers travaillent ensemble avec une priorité commune : vous accueillir, vous orienter et sécuriser votre parcours de santé.</p></div><div class="team-grid"><article class="team-card-new fade-in-element"><div class="team-photo"><img src="images/a-propos/professionnelle-sante.jpg" alt="Professionnelle de santé à l'écoute"></div><div class="team-info-new"><h3>Professionnelle de santé</h3><div class="team-role-new">Écoute & accompagnement</div><p>Une présence attentive pour accueillir, comprendre les besoins et orienter chaque patient avec bienveillance.</p></div></article><article class="team-card-new fade-in-element"><div class="team-photo"><img src="images/equipe/pharmacienne-adjointe.jpg" alt="Pharmacienne adjointe"></div><div class="team-info-new"><h3>Pharmacienne adjointe</h3><div class="team-role-new">Conseil & suivi des patients</div><p>À l'écoute des besoins, elle accompagne les patients dans la compréhension et le bon usage de leurs traitements.</p></div></article><article class="team-card-new fade-in-element"><div class="team-photo"><img src="images/a-propos/pharmacienne-conseil.jpg" alt="Pharmacienne africaine en blouse blanche"></div><div class="team-info-new"><h3>Pharmacienne conseil</h3><div class="team-role-new">Délivrance & sécurité</div><p>Elle veille à la bonne compréhension des traitements et accompagne chaque patient avec clarté et rigueur.</p></div></article><article class="team-card-new fade-in-element"><div class="team-photo"><img src="images/a-propos/pharmacienne-preparation.jpg" alt="Pharmacienne africaine préparant des médicaments"></div><div class="team-info-new"><h3>Pharmacienne préparatrice</h3><div class="team-role-new">Préparation & qualité</div><p>Elle contribue à la préparation, au contrôle et à la disponibilité des produits dans le respect des bonnes pratiques.</p></div></article></div></div></section>
 
-          <!-- Jalon 2 -->
-          <div class="timeline-item fade-in-element">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[ANNEE_MODERNISATION] — Extension et digitalisation</div>
-              <p>
-                Modernisation des espaces d'accueil, élargissement de la gamme parapharmaceutique et mise en place d'un système informatique garantissant la traçabilité intégrale des lots.
-              </p>
-              <span class="tag-demo">Historique modulable selon informations officielles</span>
-            </div>
-          </div>
+    <section class="about-section"><div class="container promise-wrap"><div class="promise-image fade-in-element"><img src="images/a-propos/espace-parapharmacie.jpg" alt="Rayons de parapharmacie et produits de bien-être"></div><div class="promise-panel fade-in-element"><div class="kicker">Notre promesse</div><h2 class="heading">Vous accompagner au-delà du comptoir.</h2><p>Parce qu'un bon service pharmaceutique ne s'arrête pas à la remise d'un produit, nous accordons une place essentielle à l'explication, à la prévention et au suivi.</p><div class="promise-list"><div class="promise-item"><div class="promise-icon">+</div><div><strong>Un conseil personnalisé</strong><span>Une réponse ajustée à votre situation et à vos besoins.</span></div></div><div class="promise-item"><div class="promise-icon">✓</div><div><strong>Une pratique responsable</strong><span>La sécurité, la discrétion et la qualité comme exigences permanentes.</span></div></div><div class="promise-item"><div class="promise-icon">♥</div><div><strong>Une relation durable</strong><span>Une équipe disponible qui apprend à connaître et accompagner ses patients.</span></div></div></div></div></div></section>
 
-          <!-- Jalon 3 -->
-          <div class="timeline-item fade-in-element">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[ANNEE_CONVENTIONS] — Conventions AMO & SARALI</div>
-              <p>
-                Intégration des dispositifs de tiers-payant AMO et SARALI pour simplifier la vie des assurés et faciliter l'accès aux traitements pour tous les patients.
-              </p>
-              <span class="tag-demo">Historique modulable selon informations officielles</span>
-            </div>
-          </div>
-
-          <!-- Jalon 4 -->
-          <div class="timeline-item fade-in-element">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">Aujourd'hui — Proximité & Innovation continue</div>
-              <p>
-                Une équipe renforcée et disponible pour répondre aux enjeux de prévention, de conseil dermo-cosmétique et d'accompagnement thérapeutique au quotidien.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== MISSION, VISION ET VALEURS ==================== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-badge">Nos Piliers</span>
-          <h2 class="section-title">Mission, Vision et Valeurs</h2>
-          <p class="section-subtitle">
-            Les principes éthiques qui encadrent notre exercice professionnel au quotidien.
-          </p>
-        </div>
-
-        <div class="cards-grid-4">
-          <!-- Valeur 1 -->
-          <article class="value-card fade-in-element">
-            <div class="value-icon-box">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </div>
-            <h3>Écoute & Empathie</h3>
-            <p>Prendre le temps de vous écouter sans jugement pour apporter des solutions adaptées à chaque situation de vie.</p>
-          </article>
-
-          <!-- Valeur 2 -->
-          <article class="value-card fade-in-element">
-            <div class="value-icon-box">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Rigueur & Sécurité</h3>
-            <p>Respect strict de la déontologie médicale, contrôle scrupuleux des ordonnances et conformité de conservation des produits.</p>
-          </article>
-
-          <!-- Valeur 3 -->
-          <article class="value-card fade-in-element">
-            <div class="value-icon-box">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Proximité Humaine</h3>
-            <p>Un accueil chaleureux dans une officine de quartier où chaque patient est reconnu, respecté et valorisé.</p>
-          </article>
-
-          <!-- Valeur 4 -->
-          <article class="value-card fade-in-element">
-            <div class="value-icon-box">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3>Qualité & Transparence</h3>
-            <p>Des conseils objectifs et un catalogue de produits authentiques issus de laboratoires agréés et certifiés.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== PRÉSENTATION DE L'ÉQUIPE ==================== -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-badge">Professionnels de Santé</span>
-          <h2 class="section-title">Notre équipe officinale</h2>
-          <p class="section-subtitle">
-            Une équipe qualifiée, complémentaire et passionnée, à votre service 6 jours sur 7.
-          </p>
-        </div>
-
-        <div class="cards-grid-4">
-          <!-- Membre 1 : Pharmacien Titulaire -->
-          <article class="team-card fade-in-element">
-            <div class="team-avatar-wrapper">
-              <img src="images/equipe/pharmacien-titulaire.jpg" alt="Pharmacien Titulaire [NOM_EMPLOYE]" loading="lazy">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Dr. [NOM_TITULAIRE]</h3>
-              <div class="team-role">Docteur en Pharmacie • Titulaire</div>
-              <p class="team-desc">
-                Supervision officinale, expertise en pharmacologie clinique et validation des protocoles de dispensation.
-              </p>
-              <span class="tag-demo">[Profil remplaçable]</span>
-            </div>
-          </article>
-
-          <!-- Membre 2 : Pharmacienne Adjointe -->
-          <article class="team-card fade-in-element">
-            <div class="team-avatar-wrapper">
-              <img src="images/equipe/pharmacienne-adjointe.jpg" alt="Pharmacienne Adjointe [NOM_EMPLOYE]" loading="lazy">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Dr. [NOM_ADJOINTE]</h3>
-              <div class="team-role">Pharmacienne Adjointe</div>
-              <p class="team-desc">
-                Suivi personnalisé des patients, délivrance des ordonnances et accompagnement des pathologies chroniques.
-              </p>
-              <span class="tag-demo">[Profil remplaçable]</span>
-            </div>
-          </article>
-
-          <!-- Membre 3 : Préparateur en Pharmacie -->
-          <article class="team-card fade-in-element">
-            <div class="team-avatar-wrapper">
-              <img src="images/equipe/preparateur.svg" alt="Préparateur en pharmacie [NOM_EMPLOYE]" loading="lazy">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">[NOM_PREPARATEUR]</h3>
-              <div class="team-role">Préparateur en Pharmacie</div>
-              <p class="team-desc">
-                Gestion rigoureuse des stocks, logistique des produits thermolabiles et assistance aux comptoirs.
-              </p>
-              <span class="tag-demo">[Profil remplaçable]</span>
-            </div>
-          </article>
-
-          <!-- Membre 4 : Conseillère Dermo-cosmétique -->
-          <article class="team-card fade-in-element">
-            <div class="team-avatar-wrapper">
-              <img src="images/equipe/conseillere.svg" alt="Conseillère Dermo-cosmétique [NOM_EMPLOYE]" loading="lazy">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">[NOM_CONSEILLERE]</h3>
-              <div class="team-role">Conseillère Parapharmacie</div>
-              <p class="team-desc">
-                Expertise en soins cutanés, dermo-cosmétique, hygiène corporelle et nutrition infantile.
-              </p>
-              <span class="tag-demo">[Profil remplaçable]</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== GALERIE PHOTOS AVEC LIGHTBOX ==================== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header fade-in-element">
-          <span class="section-badge">Visite Virtuelle</span>
-          <h2 class="section-title">Galerie photos de la pharmacie</h2>
-          <p class="section-subtitle">
-            Cliquez sur une photo pour l'agrandir dans la visionneuse interactive.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <!-- Photo 1 -->
-          <div class="gallery-item fade-in-element" data-caption="Comptoir d'accueil et espace dispensation ordonnances">
-            <img src="images/galerie/galerie-1.jpg" alt="Comptoir d'accueil Pharmacie SABALI" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Espace Accueil & Dispensation</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Photo 2 -->
-          <div class="gallery-item fade-in-element" data-caption="Espace consultation et conseil personnalisé confidentiel">
-            <img src="images/galerie/galerie-2.jpg" alt="Espace conseil et consultation privée" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Espace Conseil Patient</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Photo 3 -->
-          <div class="gallery-item fade-in-element" data-caption="Praticiens qualifiés à votre écoute en continu">
-            <img src="images/galerie/galerie-3.jpg" alt="Équipe pharmaceutique en blouse médicale" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Professionnels Dédiés</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Photo 4 -->
-          <div class="gallery-item fade-in-element" data-caption="Contrôle qualité et vérification des délivrances">
-            <img src="images/galerie/galerie-4.jpg" alt="Vérification des ordonnances" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Vérification & Sécurité</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Photo 5 -->
-          <div class="gallery-item fade-in-element" data-caption="Rayonnages organisés et parapharmacie de pointe">
-            <img src="images/galerie/galerie-5.jpg" alt="Rayonnages de produits et parapharmacie" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Rayonnages Parapharmacie</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Photo 6 -->
-          <div class="gallery-item fade-in-element" data-caption="Espace hygiène, soins bébés et compléments alimentaires">
-            <img src="images/galerie/galerie-6.jpg" alt="Soins bébé et hygiène en officine" loading="lazy">
-            <div class="gallery-item-overlay">
-              <div class="gallery-item-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg>
-                <span>Espace Santé & Bébé</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3.5rem;">
-          <a href="contact.html" class="btn btn-primary">Prendre contact avec notre équipe</a>
-        </div>
-      </div>
-    </section>
+    <section class="about-cta"><div class="container"><div class="cta-inner fade-in-element"><h2>Une question de santé ? Notre équipe est là pour vous écouter.</h2><div class="cta-actions"><a href="contact.html" class="btn btn-primary">Nous contacter</a><button class="btn btn-whatsapp" data-wa-action="ask-info">Écrire sur WhatsApp</button></div></div></div></section>
+    <div class="footer-buffer" aria-hidden="true"></div>
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo-link" style="color: #ffffff;">
-            <div class="logo-badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-            </div>
-            <div class="logo-text">
-              <div class="logo-title" style="color: #ffffff;">PHARMACIE <span style="color: var(--primary-light);">SABALI</span></div>
-              <div class="logo-tagline" style="color: #94a3b8;">Santé • Écoute • Conseil</div>
-            </div>
-          </div>
-          <p>
-            Officine de référence engagée pour votre santé. Conseil pharmaceutique, disponibilité des médicaments et service personnalisé au cœur de votre quotidien.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a-propos.html">À propos de nous</a></li>
-            <li><a href="expertise.html">Notre expertise</a></li>
-            <li><a href="produits.html">Nos produits</a></li>
-            <li><a href="contact.html">Nos contacts</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Services</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#services">Conseil pharmaceutique</a></li>
-            <li><a href="index.html#services">Prise en charge AMO</a></li>
-            <li><a href="index.html#services">Convention SARALI</a></li>
-            <li><a href="index.html#services">Espace Consultation</a></li>
-            <li><a href="produits.html">Catalogue produits</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Nous contacter</h4>
-          <ul class="footer-contact-list">
-            <li class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>BACO DJICORONI RUE 636, BAMAKO</span>
-            </li>
-            <li class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>+223 77 25 52 42</span>
-            </li>
-            <li class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>pharmaciesabali223@gmail.com</span>
-            </li>
-            <li class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Lun–Jeu : 08h15–22h30 · Ven : 08h30–22h30 · Sam : 08h15–22h30 · Dim : 10h00–20h00</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          © 2026 Pharmacie SABALI — Tous droits réservés.
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-btn" title="Facebook Pharmacie SABALI" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <button class="social-btn btn-whatsapp" title="WhatsApp Pharmacie SABALI" aria-label="WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.179.182-.077.357.101.174.449.741.963 1.2 0.662.59 1.22.772 1.393.859.173.087.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Actions Flottantes -->
-  <div class="floating-actions">
-    <button class="floating-wa-btn" data-wa-action="ask-info" title="WhatsApp" aria-label="WhatsApp">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.179.182-.077.357.101.174.449.741.963 1.2 0.662.59 1.22.772 1.393.859.173.087.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-    </button>
-    <button class="scroll-top-btn" aria-label="Retour en haut" title="Remonter en haut">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
-  </div>
-
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-shell" aria-label="Accueil Pharmacie Sabali"><img src="images/logo/logo.svg" alt="Pharmacie Sabali"></a><p>Une officine de proximité engagée pour votre santé, avec un conseil professionnel et un accueil attentif.</p></div><div><h4 class="footer-title">Navigation</h4><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="expertise.html">Expertise</a></li><li><a href="produits.html">Produits</a></li><li><a href="contact.html">Contacts</a></li></ul></div><div><h4 class="footer-title">Nous contacter</h4><ul class="footer-contact-list"><li class="footer-contact-item"><span>Avenue de l'Indépendance, Bamako</span></li><li class="footer-contact-item"><span>+223 76 00 00 00</span></li><li class="footer-contact-item"><span>contact@pharmacie-sabali.ml</span></li><li class="footer-contact-item"><span>Lun - Sam : 08h00 - 22h00</span></li></ul></div></div><div class="footer-bottom"><div>© 2026 Pharmacie Sabali — Tous droits réservés.</div></div></div></footer>
+  <div class="floating-actions"><button class="floating-wa-btn" data-wa-action="ask-info" title="WhatsApp" aria-label="WhatsApp">WA</button><button class="scroll-top-btn" aria-label="Retour en haut" title="Remonter en haut"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button></div>
   <script src="js/main.js"></script>
 </body>
 </html>
