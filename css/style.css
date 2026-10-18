@@ -607,7 +607,7 @@ p:last-child { margin-bottom: 0; }
   z-index: -2;
   inset: -8px;
   background: url('../images/pharmacie/hero.jpg') center 48% / cover no-repeat;
-  filter: blur(2px);
+  filter: blur(0.5px);
   transform: scale(1.02);
 }
 
@@ -615,7 +615,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(100deg, rgba(3, 35, 27, 0.94) 0%, rgba(5, 57, 43, 0.84) 44%, rgba(5, 45, 37, 0.54) 100%);
+  background: linear-gradient(100deg, rgba(3, 35, 27, 0.84) 0%, rgba(5, 57, 43, 0.68) 44%, rgba(5, 45, 37, 0.38) 100%);
   pointer-events: none;
 }
 
@@ -2277,7 +2277,7 @@ textarea.form-control {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(112deg, rgba(4, 44, 34, 0.92) 0%, rgba(9, 79, 57, 0.82) 48%, rgba(7, 50, 43, 0.88) 100%),
+    linear-gradient(112deg, rgba(4, 44, 34, 0.82) 0%, rgba(9, 79, 57, 0.68) 48%, rgba(7, 50, 43, 0.58) 100%),
     url("../images/pharmacie/interieur_real.jpg") center 56% / cover no-repeat;
   transform: scale(1.02);
 }
@@ -2290,8 +2290,8 @@ textarea.form-control {
 .cta-box {
   background: rgba(255, 255, 255, 0.09);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   border-radius: var(--radius-xl);
   padding: 3.5rem 2.5rem;
   text-align: center;
