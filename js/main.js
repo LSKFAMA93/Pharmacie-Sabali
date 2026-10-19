@@ -16,8 +16,8 @@ const PHARMACIE_CONFIG = {
   email: "pharmaciesabali223@gmail.com",
   adresse: "BACO DJICORONI RUE 636, BAMAKO",
   googleMapsUrl: "https://www.google.com/maps/place/Pharmacie+Sabali/@12.5987037,-8.0312152,17z",
-  horairesSemaine: "Lundi au Jeudi : 08h15 – 22h30 | Vendredi : 08h30 – 22h30 | Samedi : 08h15 – 22h30",
-  horairesDimanche: "Dimanche : 10h00 – 20h00"
+  horairesSemaine: "Lundi au Samedi : 08h00 – 23h00",
+  horairesDimanche: "Fermé"
 };
 
 // ==========================================================================
@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initActiveNavigation();
   initScrollAnimations();
+  initCategoryCarousel();
 
   // Modules spécifiques selon la page
   initProductsPage();
@@ -709,14 +710,18 @@ function initContactForms() {
 
   forms.forEach(form => {
     const nomInput = form.querySelector('[name="nom"]');
+    const prenomInput = form.querySelector('[name="prenom"]');
     const telInput = form.querySelector('[name="telephone"]');
     const emailInput = form.querySelector('[name="email"]');
+    const objetInput = form.querySelector('[name="objet"]');
     const messageInput = form.querySelector('[name="message"]');
 
     // Validation à la frappe
     if (nomInput) nomInput.addEventListener("input", () => validateField(nomInput, val => val.trim().length >= 2, "Veuillez renseigner un nom valide (au moins 2 caractères)."));
+    if (prenomInput) prenomInput.addEventListener("input", () => validateField(prenomInput, val => val.trim().length >= 2, "Veuillez renseigner un prénom valide (au moins 2 caractères)."));
     if (telInput) telInput.addEventListener("input", () => validateField(telInput, val => /^[\d\s+\-().]{6,20}$/.test(val.trim()), "Veuillez indiquer un numéro de téléphone valide."));
     if (emailInput) emailInput.addEventListener("input", () => validateField(emailInput, val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()), "Veuillez saisir une adresse email valide."));
+    if (objetInput) objetInput.addEventListener("change", () => validateField(objetInput, val => val !== "", "Veuillez choisir l’objet de votre demande."));
     if (messageInput) messageInput.addEventListener("input", () => validateField(messageInput, val => val.trim().length >= 10, "Votre message doit contenir au moins 10 caractères."));
 
     form.addEventListener("submit", (e) => {
@@ -724,9 +729,11 @@ function initContactForms() {
 
       let isValid = true;
 
-      if (nomInput && !validateField(nomInput, val => val.trim().length >= 2, "Veuillez renseigner votre nom complet.")) isValid = false;
+      if (nomInput && !validateField(nomInput, val => val.trim().length >= 2, "Veuillez renseigner un nom valide.")) isValid = false;
+      if (prenomInput && !validateField(prenomInput, val => val.trim().length >= 2, "Veuillez renseigner un prénom valide.")) isValid = false;
       if (telInput && !validateField(telInput, val => /^[\d\s+\-().]{6,20}$/.test(val.trim()), "Veuillez indiquer un numéro de téléphone valide.")) isValid = false;
       if (emailInput && !validateField(emailInput, val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()), "Veuillez saisir une adresse email valide.")) isValid = false;
+      if (objetInput && !validateField(objetInput, val => val !== "", "Veuillez choisir l’objet de votre demande.")) isValid = false;
       if (messageInput && !validateField(messageInput, val => val.trim().length >= 10, "Votre message doit contenir au moins 10 caractères.")) isValid = false;
 
       if (!isValid) {
@@ -865,4 +872,106 @@ function initScrollAnimations() {
   document.querySelectorAll(".fade-in-element").forEach(el => {
     observer.observe(el);
   });
+}
+
+function initCategoryCarousel() {
+  const carousel = document.querySelector("#categoryCarousel");
+  if (!carousel) return;
+
+  const viewport = carousel.querySelector(".category-carousel-viewport");
+  const cards = [...carousel.querySelectorAll(".category-carousel-track > .category-card")];
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const intervalDelay = 4500;
+  let intervalId;
+  let isPaused = false;
+
+  cards.forEach((card, index) => {
+    card.setAttribute("role", "group");
+    card.setAttribute("aria-roledescription", "diapositive");
+    card.setAttribute("aria-label", `${index + 1} sur ${cards.length}`);
+  });
+
+  const getStep = () => {
+    if (cards.length < 2) return viewport.clientWidth;
+    return cards[1].offsetLeft - cards[0].offsetLeft;
+  };
+
+  const move = (direction) => {
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+    const step = getStep();
+    if (maxScroll <= 1 || step <= 0) return;
+
+    const atStart = viewport.scrollLeft <= 1;
+    const atEnd = viewport.scrollLeft >= maxScroll - 1;
+    const target = direction > 0
+      ? (atEnd ? 0 : Math.min(viewport.scrollLeft + step, maxScroll))
+      : (atStart ? maxScroll : Math.max(viewport.scrollLeft - step, 0));
+
+    viewport.scrollTo({
+      left: target,
+      behavior: reducedMotion.matches ? "instant" : "smooth"
+    });
+  };
+
+  const stopAutoplay = () => {
+    window.clearInterval(intervalId);
+    intervalId = undefined;
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    if (isPaused || reducedMotion.matches || document.hidden || cards.length < 3) return;
+    intervalId = window.setInterval(() => move(1), intervalDelay);
+  };
+
+  previousButton.addEventListener("click", () => {
+    move(-1);
+    startAutoplay();
+  });
+
+  nextButton.addEventListener("click", () => {
+    move(1);
+    startAutoplay();
+  });
+
+  carousel.addEventListener("pointerenter", () => {
+    isPaused = true;
+    stopAutoplay();
+  });
+
+  carousel.addEventListener("pointerleave", () => {
+    isPaused = false;
+    startAutoplay();
+  });
+
+  carousel.addEventListener("focusin", () => {
+    isPaused = true;
+    stopAutoplay();
+  });
+
+  carousel.addEventListener("focusout", (event) => {
+    if (!carousel.contains(event.relatedTarget)) {
+      isPaused = false;
+      startAutoplay();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAutoplay();
+    else startAutoplay();
+  });
+
+  reducedMotion.addEventListener?.("change", startAutoplay);
+
+  if ("IntersectionObserver" in window) {
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) startAutoplay();
+      else stopAutoplay();
+    });
+    visibilityObserver.observe(carousel);
+  } else {
+    startAutoplay();
+  }
 }

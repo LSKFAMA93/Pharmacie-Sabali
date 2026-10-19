@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 96" role="img" aria-labelledby="logoTitle logoDescription">
+  <title id="logoTitle">Pharmacie SABALI</title>
+  <desc id="logoDescription">Santé, écoute et conseil — emblème de pharmacie avec coupe et serpent</desc>
+  <defs>
+    <linearGradient id="sabaliGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#218b65"/>
+      <stop offset="1" stop-color="#0a3d2c"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="7" width="82" height="82" rx="25" fill="url(#sabaliGreen)" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+  <path d="M23 48h46l-5 23H28l-5-23Z" fill="none" stroke="#fff" stroke-width="4.2" stroke-linejoin="round"/>
+  <path d="M20 48h52M46 22c-12 8 12 12 0 21s-12 16 0 25" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
+  <circle cx="46" cy="22" r="3.2" fill="#a7f3d0"/>
+  <path d="M36 72h20" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round"/>
+  <text x="106" y="47" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="29" font-weight="800" letter-spacing="-1.1" fill="#fff">PHARMACIE <tspan fill="#a7f3d0">SABALI</tspan></text>
+  <path d="M108 59h30" stroke="#d7bd83" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="148" y="66" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#d4e4dc">SANTÉ <tspan fill="#9bb5a8">•</tspan> ÉCOUTE <tspan fill="#9bb5a8">•</tspan> CONSEIL</text>
+</svg>

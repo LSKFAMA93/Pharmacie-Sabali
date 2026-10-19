@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pharmacie SABALI">
   <defs>
-    <linearGradient id="favGreen" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#059669"/>
-      <stop offset="100%" stop-color="#047857"/>
+    <linearGradient id="favGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#218b65"/>
+      <stop offset="1" stop-color="#10543b"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#ffffff"/>
-  <rect x="25" y="10" width="14" height="44" rx="7" fill="url(#favGreen)"/>
-  <rect x="10" y="25" width="44" height="14" rx="7" fill="url(#favGreen)"/>
-  <circle cx="32" cy="32" r="5" fill="#ffffff"/>
-  <circle cx="32" cy="32" r="2.5" fill="#0284c7"/>
+  <rect width="64" height="64" rx="18" fill="url(#favGreen)"/>
+  <path d="M17 35h30l-3.5 16h-23L17 35Z" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M15 35h34M32 12c-9 6 9 8.5 0 15s-9 11 0 17" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="32" cy="12" r="2.4" fill="#a7f3d0"/>
+  <path d="M25 51h14" stroke="#a7f3d0" stroke-width="2.4" stroke-linecap="round"/>
 </svg>

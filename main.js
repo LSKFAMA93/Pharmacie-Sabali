@@ -16,8 +16,8 @@ const PHARMACIE_CONFIG = {
   email: "pharmaciesabali223@gmail.com",
   adresse: "BACO DJICORONI RUE 636, BAMAKO",
   googleMapsUrl: "https://www.google.com/maps/place/Pharmacie+Sabali/@12.5987037,-8.0312152,17z",
-  horairesSemaine: "Lundi au Jeudi : 08h15 – 22h30 | Vendredi : 08h30 – 22h30 | Samedi : 08h15 – 22h30",
-  horairesDimanche: "Dimanche : 10h00 – 20h00"
+  horairesSemaine: "Lundi au Samedi : 08h00 – 23h00",
+  horairesDimanche: "Fermé"
 };
 
 // ==========================================================================

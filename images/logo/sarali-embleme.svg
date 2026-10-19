@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Sarali</title>
+  <desc id="desc">Emblème Sarali inspiré du paiement par scan</desc>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8ef"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="124" height="124" rx="24" fill="url(#tile)"/>
+  <path d="M22 38V24h14M92 24h14v14M106 90v14H92M36 104H22V90" fill="none" stroke="#e97818" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 51c0-7 6-12 15-12h19c8 0 13 4 13 10 0 5-3 8-10 10l-17 4c-7 2-10 5-10 10 0 7 6 12 15 12h18" fill="none" stroke="#173b69" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="91" cy="82" r="8" fill="#e97818"/>
+  <path d="M87 82h8M91 78v8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="64" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing=".5" fill="#173b69">SARALI</text>
+</svg>

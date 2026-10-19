@@ -8,7 +8,6 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="favicon.ico">
 
   <!-- Open Graph -->
   <meta property="og:title" content="PHARMACIE SABALI — Votre santé, notre priorité">
@@ -25,16 +24,7 @@
   <header class="site-header" id="header">
     <div class="container header-container">
       <a href="index.html" class="logo-link" aria-label="Retour à l'accueil Pharmacie SABALI">
-        <div class="logo-badge">
-          <!-- Icône Croix Médicale SVG -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12h14"/>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <div class="logo-title">PHARMACIE <span>SABALI</span></div>
-          <div class="logo-tagline">Santé • Écoute • Conseil</div>
-        </div>
+        <img src="images/logo/logo.svg" alt="Pharmacie SABALI — Santé, écoute, conseil" class="header-logo">
       </a>
 
       <!-- Navigation Desktop -->
@@ -87,8 +77,7 @@
       <div class="container hero-grid">
         <div class="hero-content fade-in-element is-visible">
           <div class="hero-badge-tag">
-            <!-- Icone pulsation santé -->
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             <span>Officine Ouverte & À votre écoute 7j/7</span>
           </div>
           <h1 class="hero-title">PHARMACIE SABALI</h1>
@@ -102,21 +91,6 @@
           </div>
         </div>
 
-        <div class="hero-visual fade-in-element is-visible">
-          <div class="hero-visual-card">
-            <!-- Image réelle de la Pharmacie Sabali -->
-            <img src="images/pharmacie/hero.jpg" alt="Pharmacie SABALI — Comptoir d'accueil et espace officinal réel" class="hero-image">
-            <div class="hero-floating-badge">
-              <div class="badge-icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div>
-                <div style="font-weight: 700; font-size: 0.95rem;">Qualité & Écoute garantie</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">Prise en charge personnalisée de chaque ordonnance</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -148,7 +122,7 @@
               </div>
             </div>
 
-            <div style="margin-top: 2rem;">
+            <div class="presentation-actions">
               <a href="a-propos.html" class="btn btn-primary">En savoir plus sur notre histoire</a>
             </div>
           </div>
@@ -178,7 +152,6 @@
             </div>
             <h3>Conseil pharmaceutique</h3>
             <p>Analyse minutieuse de vos ordonnances, explications claires des posologies et vérification des interactions médicamenteuses.</p>
-            <span class="tag-demo">Exemple modifiable</span>
           </article>
 
           <!-- Service 2 -->
@@ -191,7 +164,6 @@
             </div>
             <h3>Accompagnement patients</h3>
             <p>Suivi régulier des pathologies chroniques (diabète, hypertension, asthme) pour améliorer votre confort de vie au quotidien.</p>
-            <span class="tag-demo">Exemple modifiable</span>
           </article>
 
           <!-- Service 3 -->
@@ -204,20 +176,18 @@
             </div>
             <h3>Vente de produits</h3>
             <p>Disponibilité constante de médicaments essentiels, génériques certifiés et dispositifs de santé aux normes internationales.</p>
-            <span class="tag-demo">Exemple modifiable</span>
           </article>
 
           <!-- Service 4 -->
           <article class="service-card fade-in-element">
             <div class="service-visual">
-              <img src="images/services/consultation.jpg" alt="Information et orientation" loading="lazy">
+              <img src="images/galerie/galerie-1.jpg" alt="Comptoir de la pharmacie vu du côté client, avec le dos des écrans orienté vers les clients et les affichages tournés vers l’équipe" loading="lazy">
             </div>
             <div class="service-icon-box">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
             </div>
             <h3>Information & Orientation</h3>
             <p>Sensibilisation préventive, conseils d'hygiène de vie et orientation ciblée vers les praticiens ou centres d'urgence adaptés.</p>
-            <span class="tag-demo">Exemple modifiable</span>
           </article>
         </div>
 
@@ -238,7 +208,17 @@
           </p>
         </div>
 
-        <div class="cards-grid-3">
+        <div class="category-carousel" id="categoryCarousel" role="region" aria-label="Catégories de produits">
+          <div class="category-carousel-controls">
+            <button class="carousel-control" type="button" data-carousel-prev aria-label="Catégories précédentes">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-control" type="button" data-carousel-next aria-label="Catégories suivantes">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="category-carousel-viewport" tabindex="0" aria-roledescription="carrousel">
+            <div class="category-carousel-track">
           <!-- Catégorie 1 : Médicaments -->
           <article class="category-card fade-in-element">
             <div class="category-image-wrap">
@@ -310,6 +290,8 @@
               <a href="produits.html?cat=bien-etre" class="btn btn-secondary btn-sm">Voir les produits</a>
             </div>
           </article>
+            </div>
+          </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
@@ -330,48 +312,15 @@
         </div>
 
         <div class="onsite-services-grid">
-          <!-- Carte AMO -->
-          <article class="onsite-card fade-in-element">
-            <div class="onsite-card-header">
-              <div class="onsite-badge-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-              </div>
-              <div>
-                <h3>AMO</h3>
-                <div style="font-size: 0.85rem; color: var(--text-muted);">Assurance Maladie Obligatoire</div>
-              </div>
-            </div>
-            <div class="onsite-card-body">
-              <p>
-                Prise en charge directe de vos ordonnances conventionnées avec le système AMO. Notre équipe gère le tiers-payant pour vous éviter l'avance intégrale des frais.
-              </p>
-              <ul class="onsite-features">
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Traitement rapide des feuilles de soins</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Vérification des droits et prise en charge</span>
-                </li>
-                <li>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Conseils sur le panier de médicaments remboursables</span>
-                </li>
-              </ul>
-              <span class="tag-demo">Description modulable selon convention</span>
-            </div>
-          </article>
-
           <!-- Carte SARALI -->
-          <article class="onsite-card fade-in-element">
+          <article class="onsite-card onsite-card--sarali fade-in-element">
             <div class="onsite-card-header">
-              <div class="onsite-badge-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <div class="onsite-brand-logo">
+                <img src="images/logo/sarali-embleme.svg" alt="Logo Sarali">
               </div>
               <div>
                 <h3>SARALI</h3>
-                <div style="font-size: 0.85rem; color: var(--text-muted);">Services de facilitation & Mutuelles</div>
+                <div class="onsite-card-subtitle">Services de facilitation & Mutuelles</div>
               </div>
             </div>
             <div class="onsite-card-body">
@@ -392,19 +341,18 @@
                   <span>Clarté sur le reste à charge</span>
                 </li>
               </ul>
-              <span class="tag-demo">Description modulable selon accord</span>
             </div>
           </article>
 
-          <!-- Carte Consultation -->
-          <article class="onsite-card fade-in-element">
+          <!-- Carte Consultation, mise en avant au centre -->
+          <article class="onsite-card onsite-card--consultation fade-in-element">
             <div class="onsite-card-header">
               <div class="onsite-badge-icon">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
               </div>
               <div>
                 <h3>Consultation</h3>
-                <div style="font-size: 0.85rem; color: var(--text-muted);">Espace Conseil & Suivi santé</div>
+                <div class="onsite-card-subtitle">Espace Conseil & Suivi santé</div>
               </div>
             </div>
             <div class="onsite-card-body">
@@ -425,7 +373,38 @@
                   <span>Orientation médicale rapide en cas d'urgence</span>
                 </li>
               </ul>
-              <span class="tag-demo">Services sous supervision pharmaceutique</span>
+            </div>
+          </article>
+
+          <!-- Carte Assurance Maladie Obligatoire -->
+          <article class="onsite-card onsite-card--assurance fade-in-element">
+            <div class="onsite-card-header">
+              <div class="onsite-brand-logo onsite-brand-logo--canam">
+                <img src="images/logo/amo.jpg" alt="Logo CANAM — Caisse Nationale d’Assurance Maladie du Mali">
+              </div>
+              <div>
+                <h3>Assurance (AMO)</h3>
+                <div class="onsite-card-subtitle">Assurance Maladie Obligatoire</div>
+              </div>
+            </div>
+            <div class="onsite-card-body">
+              <p>
+                Prise en charge directe de vos ordonnances conventionnées avec le système AMO. Notre équipe gère le tiers-payant pour vous éviter l'avance intégrale des frais.
+              </p>
+              <ul class="onsite-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Traitement rapide des feuilles de soins</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Vérification des droits et prise en charge</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Conseils sur le panier de médicaments remboursables</span>
+                </li>
+              </ul>
             </div>
           </article>
         </div>
@@ -481,7 +460,7 @@
               </div>
               <div>
                 <div class="contact-info-label">Horaires d'ouverture</div>
-                <div class="contact-info-value" style="font-size: 0.95rem; line-height: 1.5;">Lun - Jeu : 08h15 – 22h30<br>Vendredi : 08h30 – 22h30<br>Samedi : 08h15 – 22h30<br>Dimanche : 10h00 – 20h00</div>
+                <div class="contact-info-value" style="font-size: 0.95rem; line-height: 1.5;">Lundi – Samedi : 08h00 – 23h00</div>
               </div>
             </div>
 
@@ -491,8 +470,8 @@
               </div>
               <div>
                 <div class="contact-info-label">Téléphone & WhatsApp</div>
-                <div class="contact-info-value"><a href="tel:+22377255242">+223 77 25 52 42</a></div>
-                <div class="contact-info-desc">WhatsApp : <a href="https://wa.me/22391033837" target="_blank" rel="noopener noreferrer">+223 91 03 38 37</a></div>
+                <div class="contact-info-value"><a href="tel:+22377255242">77 25 52 42</a></div>
+                <div class="contact-info-desc"><a href="tel:+22391033837">91 03 38 37</a></div>
               </div>
             </div>
 
@@ -550,15 +529,9 @@
       <div class="footer-grid">
         <!-- Colonne 1 : Brand -->
         <div class="footer-brand">
-          <div class="logo-link" style="color: #ffffff;">
-            <div class="logo-badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-            </div>
-            <div class="logo-text">
-              <div class="logo-title" style="color: #ffffff;">PHARMACIE <span style="color: var(--primary-light);">SABALI</span></div>
-              <div class="logo-tagline" style="color: #94a3b8;">Santé • Écoute • Conseil</div>
-            </div>
-          </div>
+          <a href="index.html" class="footer-logo-link" aria-label="Pharmacie SABALI, accueil">
+            <img src="images/logo/logo-footer.svg" alt="Pharmacie SABALI — Santé, écoute, conseil" class="footer-logo">
+          </a>
           <p>
             Officine de référence engagée pour votre santé. Conseil pharmaceutique, disponibilité des médicaments et service personnalisé au cœur de votre quotidien.
           </p>
@@ -598,7 +571,7 @@
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>+223 77 25 52 42</span>
+              <a href="tel:+22377255242">77 25 52 42</a>
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -606,7 +579,7 @@
             </li>
             <li class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Lun–Jeu : 08h15–22h30 · Ven : 08h30–22h30 · Sam : 08h15–22h30 · Dim : 10h00–20h00</span>
+              <span>Lundi–Samedi : 08h00–23h00</span>
             </li>
           </ul>
         </div>
