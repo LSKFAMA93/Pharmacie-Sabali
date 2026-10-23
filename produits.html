@@ -40,6 +40,14 @@
 
       <!-- CTA Header -->
       <div class="header-cta-group">
+        <button class="cart-open-btn" id="cartOpenButton" type="button" aria-label="Ouvrir le panier (0 article)" aria-expanded="false" aria-controls="shoppingCart">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M3 3h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/>
+            <circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/>
+          </svg>
+          <span>Panier</span>
+          <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+        </button>
         <button class="btn btn-whatsapp btn-sm" data-wa-action="ask-info" title="Écrire sur WhatsApp">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.179.182-.077.357.101.174.449.741.963 1.2 0.662.59 1.22.772 1.393.859.173.087.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
@@ -52,6 +60,28 @@
       </div>
     </div>
   </header>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <button class="cart-backdrop" type="button" data-cart-close aria-label="Fermer le panier"></button>
+    <aside class="cart-drawer" id="shoppingCart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" tabindex="-1">
+      <div class="cart-drawer-header">
+        <div>
+          <span class="cart-eyebrow">Votre sélection</span>
+          <h2 id="cartTitle">Mon panier <span id="cartTitleCount">(0)</span></h2>
+        </div>
+        <button class="cart-close-btn" type="button" data-cart-close aria-label="Fermer le panier">&times;</button>
+      </div>
+      <p class="cart-empty" id="cartEmpty">Votre panier est vide. Ajoutez les produits qui vous intéressent.</p>
+      <ul class="cart-items" id="cartItems" aria-label="Produits dans votre panier"></ul>
+      <div class="cart-drawer-footer" id="cartFooter" hidden>
+        <p>La disponibilité et les modalités de délivrance seront confirmées par la pharmacie.</p>
+        <button class="btn btn-whatsapp cart-checkout-btn" id="cartCheckoutButton" type="button">
+          Finaliser sur WhatsApp
+        </button>
+        <button class="cart-clear-btn" id="cartClearButton" type="button">Vider le panier</button>
+      </div>
+    </aside>
+  </div>
 
   <!-- Tiroir Mobile -->
   <div class="mobile-menu-drawer" id="mobileDrawer">
@@ -114,9 +144,24 @@
           <button class="filter-btn" data-category="bien-etre" role="tab">Bien-être & Nutrition</button>
         </div>
 
-        <!-- Grille dynamique des produits -->
-        <div class="cards-grid-3" id="productsGrid" style="min-height: 400px;">
-          <!-- Les 18 cartes de produits sont générées dynamiquement par js/main.js -->
+        <!-- Carrousel dynamique des produits -->
+        <div class="product-carousel" id="productCarousel">
+          <div class="product-carousel-controls">
+            <span class="product-carousel-status" id="productCarouselStatus" aria-live="polite"></span>
+            <div>
+              <button class="carousel-control" type="button" data-product-carousel-prev aria-label="Produits précédents">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="carousel-control" type="button" data-product-carousel-next aria-label="Produits suivants">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="product-carousel-viewport" tabindex="0" role="region" aria-label="Catalogue des produits" aria-roledescription="carrousel">
+            <div class="product-carousel-track" id="productsGrid" style="min-height: 400px;">
+              <!-- Les cartes sont générées dynamiquement par js/main.js -->
+            </div>
+          </div>
         </div>
 
         <!-- Bloc aide & commande WhatsApp -->

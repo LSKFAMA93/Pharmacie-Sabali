@@ -399,8 +399,253 @@ function initProductsPage() {
 
   if (!productsGrid) return;
 
+  const carousel = document.getElementById("productCarousel");
+  const carouselViewport = carousel.querySelector(".product-carousel-viewport");
+  const carouselStatus = document.getElementById("productCarouselStatus");
+  const previousButton = carousel.querySelector("[data-product-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-product-carousel-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const cartOpenButton = document.getElementById("cartOpenButton");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const cartDrawer = document.getElementById("shoppingCart");
+  const cartItems = document.getElementById("cartItems");
+  const cartCount = document.getElementById("cartCount");
+  const cartTitleCount = document.getElementById("cartTitleCount");
+  const cartEmpty = document.getElementById("cartEmpty");
+  const cartFooter = document.getElementById("cartFooter");
+  const cartStorageKey = "pharmacieSabaliCart";
+  let carouselInterval;
+  let carouselPaused = false;
+  let cart = loadCart();
+  let previouslyFocusedElement;
+
   let currentCategory = "all";
   let currentSearchQuery = "";
+
+  function loadCart() {
+    try {
+      const savedCart = localStorage.getItem(cartStorageKey);
+      if (!savedCart) return [];
+
+      const parsedCart = JSON.parse(savedCart);
+      if (!Array.isArray(parsedCart)) {
+        throw new TypeError("Le panier sauvegardé n'est pas une liste.");
+      }
+
+      return parsedCart.filter(item => {
+        const isValid = item &&
+          PRODUCTS_DATA.some(product => product.id === item.id) &&
+          Number.isInteger(item.quantity) &&
+          item.quantity > 0;
+        if (!isValid) console.error("Un article invalide a été ignoré dans le panier sauvegardé.", item);
+        return isValid;
+      });
+    } catch (error) {
+      console.error("Impossible de lire le panier enregistré dans le navigateur.", error);
+      showToast("Le panier enregistré n'a pas pu être lu. Un nouveau panier temporaire a été créé.", "danger");
+      return [];
+    }
+  }
+
+  function saveCart() {
+    try {
+      localStorage.setItem(cartStorageKey, JSON.stringify(cart));
+      return true;
+    } catch (error) {
+      console.error("Impossible d'enregistrer le panier dans le navigateur.", error);
+      showToast("Le panier est disponible pour cette visite, mais n'a pas pu être enregistré.", "danger");
+      return false;
+    }
+  }
+
+  function renderCart() {
+    const quantity = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = quantity;
+    cartTitleCount.textContent = `(${quantity})`;
+    cartOpenButton.setAttribute("aria-label", `Ouvrir le panier (${quantity} article${quantity > 1 ? "s" : ""})`);
+    cartEmpty.hidden = cart.length > 0;
+    cartFooter.hidden = cart.length === 0;
+    cartItems.innerHTML = cart.map(item => {
+      const product = PRODUCTS_DATA.find(candidate => candidate.id === item.id);
+      if (!product) return "";
+      return `
+        <li class="cart-item">
+          <img src="${product.image}" alt="" loading="lazy">
+          <div class="cart-item-info">
+            <h3>${product.title}</h3>
+            <span>${product.categoryName}</span>
+            <div class="cart-item-controls" aria-label="Quantité de ${product.title}">
+              <button type="button" data-cart-action="decrease" data-product-id="${product.id}" aria-label="Retirer un ${product.title}">−</button>
+              <span>${item.quantity}</span>
+              <button type="button" data-cart-action="increase" data-product-id="${product.id}" aria-label="Ajouter un ${product.title}">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" type="button" data-cart-action="remove" data-product-id="${product.id}" aria-label="Supprimer ${product.title} du panier">&times;</button>
+        </li>
+      `;
+    }).join("");
+  }
+
+  function updateCart() {
+    const saved = saveCart();
+    renderCart();
+    return saved;
+  }
+
+  function setCartOpen(isOpen) {
+    cartOverlay.hidden = !isOpen;
+    cartOpenButton.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("cart-open", isOpen);
+    if (isOpen) {
+      previouslyFocusedElement = document.activeElement;
+      cartDrawer.focus();
+    } else if (previouslyFocusedElement instanceof HTMLElement) {
+      previouslyFocusedElement.focus();
+    }
+  }
+
+  function addToCart(productId) {
+    const product = PRODUCTS_DATA.find(item => item.id === productId);
+    if (!product) return;
+
+    const existingItem = cart.find(item => item.id === productId);
+    if (existingItem) existingItem.quantity += 1;
+    else cart.push({ id: productId, quantity: 1 });
+    if (updateCart()) showToast(`${product.title} ajouté au panier.`, "success");
+  }
+
+  function moveProductCarousel(direction) {
+    const cards = productsGrid.querySelectorAll(".product-card");
+    if (cards.length < 2) return;
+
+    const firstCard = cards[0];
+    const cardStep = cards[1].offsetLeft - firstCard.offsetLeft;
+    if (cardStep <= 0) return;
+
+    const maxScroll = carouselViewport.scrollWidth - carouselViewport.clientWidth;
+    if (maxScroll <= 1) return;
+    const atStart = carouselViewport.scrollLeft <= 1;
+    const atEnd = carouselViewport.scrollLeft >= maxScroll - 1;
+    const target = direction > 0
+      ? (atEnd ? 0 : Math.min(carouselViewport.scrollLeft + cardStep, maxScroll))
+      : (atStart ? maxScroll : Math.max(carouselViewport.scrollLeft - cardStep, 0));
+
+    carouselViewport.scrollTo({
+      left: target,
+      behavior: reducedMotion.matches ? "instant" : "smooth"
+    });
+  }
+
+  function stopProductCarousel() {
+    window.clearInterval(carouselInterval);
+    carouselInterval = undefined;
+  }
+
+  function startProductCarousel() {
+    stopProductCarousel();
+    if (carouselPaused || reducedMotion.matches || document.hidden ||
+        carouselViewport.scrollWidth <= carouselViewport.clientWidth + 1) return;
+    carouselInterval = window.setInterval(() => moveProductCarousel(1), 5000);
+  }
+
+  function updateProductCarouselControls() {
+    const cards = productsGrid.querySelectorAll(".product-card");
+    carouselStatus.textContent = `${cards.length} produit${cards.length > 1 ? "s" : ""}`;
+    const canScroll = carouselViewport.scrollWidth > carouselViewport.clientWidth + 1;
+    previousButton.disabled = !canScroll;
+    nextButton.disabled = !canScroll;
+    startProductCarousel();
+  }
+
+  function updateProductCarousel() {
+    carouselViewport.scrollTo({ left: 0, behavior: "instant" });
+    updateProductCarouselControls();
+  }
+
+  previousButton.addEventListener("click", () => {
+    moveProductCarousel(-1);
+    startProductCarousel();
+  });
+  nextButton.addEventListener("click", () => {
+    moveProductCarousel(1);
+    startProductCarousel();
+  });
+  carousel.addEventListener("pointerenter", () => {
+    carouselPaused = true;
+    stopProductCarousel();
+  });
+  carousel.addEventListener("pointerleave", () => {
+    carouselPaused = false;
+    startProductCarousel();
+  });
+  carousel.addEventListener("focusin", () => {
+    carouselPaused = true;
+    stopProductCarousel();
+  });
+  carousel.addEventListener("focusout", event => {
+    if (!carousel.contains(event.relatedTarget)) {
+      carouselPaused = false;
+      startProductCarousel();
+    }
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopProductCarousel();
+    else startProductCarousel();
+  });
+  window.addEventListener("resize", updateProductCarouselControls, { passive: true });
+  reducedMotion.addEventListener?.("change", startProductCarousel);
+
+  cartOpenButton.addEventListener("click", () => setCartOpen(true));
+  cartOverlay.querySelectorAll("[data-cart-close]").forEach(button => {
+    button.addEventListener("click", () => setCartOpen(false));
+  });
+  document.addEventListener("keydown", event => {
+    if (cartOverlay.hidden) return;
+    if (event.key === "Escape") {
+      setCartOpen(false);
+      return;
+    }
+    if (event.key === "Tab") {
+      const focusableElements = cartDrawer.querySelectorAll("button:not(:disabled)");
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    }
+  });
+  cartItems.addEventListener("click", event => {
+    const button = event.target.closest("[data-cart-action]");
+    if (!button) return;
+
+    const productId = button.getAttribute("data-product-id");
+    const item = cart.find(entry => entry.id === productId);
+    if (!item) return;
+
+    const action = button.getAttribute("data-cart-action");
+    if (action === "increase") item.quantity += 1;
+    else if (action === "decrease") item.quantity -= 1;
+    else if (action === "remove" || item.quantity <= 1) {
+      cart = cart.filter(entry => entry.id !== productId);
+    }
+    updateCart();
+  });
+  document.getElementById("cartClearButton").addEventListener("click", () => {
+    cart = [];
+    updateCart();
+  });
+  document.getElementById("cartCheckoutButton").addEventListener("click", () => {
+    const orderLines = cart.map(item => {
+      const product = PRODUCTS_DATA.find(candidate => candidate.id === item.id);
+      return `${item.quantity} × ${product.title}`;
+    });
+    const message = `Bonjour Pharmacie SABALI, je souhaite vérifier la disponibilité des produits suivants :\n${orderLines.join("\n")}\nMerci de me confirmer les modalités de délivrance.`;
+    window.open(`https://wa.me/${PHARMACIE_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  });
 
   // Vérifier si un paramètre d'URL "cat" est fourni (ex: produits.html?cat=medicaments)
   const urlParams = new URLSearchParams(window.location.search);
@@ -417,6 +662,7 @@ function initProductsPage() {
   }
 
   // Rendu initial
+  renderCart();
   renderProducts();
 
   // Événements sur les boutons de filtrage
@@ -449,7 +695,7 @@ function initProductsPage() {
 
     if (filtered.length === 0) {
       productsGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
+        <div class="product-carousel-empty">
           <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
           <h3 style="margin-bottom: 0.5rem;">Aucun produit trouvé</h3>
           <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 1.5rem;">
@@ -458,11 +704,12 @@ function initProductsPage() {
           <button class="btn btn-primary" onclick="resetProductFilters()">Réinitialiser les filtres</button>
         </div>
       `;
+      updateProductCarousel();
       return;
     }
 
     productsGrid.innerHTML = filtered.map(product => `
-      <article class="product-card fade-in-element is-visible" data-id="${product.id}">
+      <article class="product-card fade-in-element is-visible" data-id="${product.id}" role="group" aria-roledescription="diapositive" aria-label="${product.title}">
         <div class="product-media">
           <img src="${product.image}" alt="${product.title}" loading="lazy">
           <span class="product-category-tag">${product.categoryName}</span>
@@ -477,8 +724,9 @@ function initProductsPage() {
           <h3 class="product-title">${product.title}</h3>
           <p class="product-desc">${product.shortDesc}</p>
           <div class="product-footer">
-            <button class="btn btn-secondary btn-sm btn-product-details" data-id="${product.id}">
-              En savoir plus
+            <button class="btn btn-primary btn-sm btn-add-to-cart" data-id="${product.id}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg>
+              Ajouter au panier
             </button>
             <button class="btn btn-whatsapp btn-sm btn-product-wa" data-title="${product.title}" title="Demander ce produit sur WhatsApp">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.179.182-.077.357.101.174.449.741.963 1.2 0.662.59 1.22.772 1.393.859.173.087.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
@@ -489,22 +737,20 @@ function initProductsPage() {
       </article>
     `).join("");
 
-    // Attacher les clics sur les boutons détails
-    document.querySelectorAll(".btn-product-details").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-id");
-        openProductModal(id);
-      });
+    // Attacher les clics d'ajout au panier
+    productsGrid.querySelectorAll(".btn-add-to-cart").forEach(btn => {
+      btn.addEventListener("click", () => addToCart(btn.getAttribute("data-id")));
     });
 
     // Attacher les clics sur WhatsApp pour chaque produit
-    document.querySelectorAll(".btn-product-wa").forEach(btn => {
+    productsGrid.querySelectorAll(".btn-product-wa").forEach(btn => {
       btn.addEventListener("click", () => {
         const title = btn.getAttribute("data-title");
         const msg = `Bonjour Pharmacie SABALI, je souhaiterais savoir si le produit "${title}" est disponible en officine.`;
         window.open(`https://wa.me/${PHARMACIE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
       });
     });
+    updateProductCarousel();
   }
 
   // Fonction globale pour réinitialiser
