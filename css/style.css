@@ -775,6 +775,88 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(135deg, rgba(6, 78, 59, 0.84), rgba(5, 150, 105, 0.66)), url("../images/pharmacie/interieur.jpg") center 48% / cover no-repeat;
 }
 
+.page-hero--immersive {
+  min-height: 540px;
+  display: flex;
+  align-items: flex-end;
+  padding: 9rem 0 4.5rem;
+  text-align: left;
+  isolation: isolate;
+  background-color: #073e30;
+  background-image: linear-gradient(90deg, rgba(4, 35, 27, 0.92), rgba(4, 35, 27, 0.68) 52%, rgba(4, 35, 27, 0.18)), linear-gradient(0deg, rgba(4, 35, 27, 0.65), transparent 58%), url("../images/pharmacie/hero.jpg");
+  background-position: center 48%;
+  background-size: cover;
+}
+
+.page-hero--immersive .hero-pattern {
+  opacity: 0.18;
+}
+
+.page-hero--immersive .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.page-hero-content {
+  max-width: 850px;
+}
+
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  color: #d6f7ea;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-hero-eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: #d6a95f;
+}
+
+.page-hero--immersive h1 {
+  max-width: 900px;
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 6.5vw, 5.6rem);
+  line-height: 0.98;
+}
+
+.page-hero--immersive p {
+  max-width: 660px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.page-hero-actions {
+  justify-content: flex-start;
+  margin: 1.8rem 0 0;
+}
+
+@media (max-width: 768px) {
+  .page-hero--immersive {
+    min-height: 500px;
+    padding: 8rem 0 3.5rem;
+    background-position: 58% center;
+  }
+
+  .page-hero--immersive h1 {
+    font-size: clamp(2.8rem, 10vw, 4.2rem);
+  }
+
+  .page-hero-actions {
+    align-items: stretch;
+  }
+}
+
 /* --- 9. PRÉSENTATION & STATISTIQUES --- */
 .presentation-grid {
   display: grid;
